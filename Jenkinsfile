@@ -25,7 +25,9 @@ pipeline
                 //env.module
                 //env.exeType
                 //env.
-                sh 'mvn clean test' 
+                sh '''
+			mvn clean test
+   		  '''
             }
             post 
             {
