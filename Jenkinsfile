@@ -14,6 +14,7 @@ pipeline
 		    PATH="$M2_HOME/bin:$PATH"
 		    export PATH
       		    mvn -version
+	    	    mvn clean test
                 ''' 
             }
         }
