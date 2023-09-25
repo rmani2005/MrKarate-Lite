@@ -1,0 +1,26 @@
+#Docker file for building the image for Spring boot application
+#FROM ubuntu as ubuntu_os
+#sudo user
+USER root
+
+#From Docker hub repo, use the maven jdk library
+FROM openjdk:11 as jdk_env
+
+ENV myVariable = "This is myVaraible value from Dockerfile"
+ENV hostIP = ""
+
+WORKDIR '/app'
+VOLUME /tmp
+
+COPY pom.xml .    
+COPY src ./src
+
+########run stage########
+#FROM openjdk:11
+#WORKDIR '/app'
+CMD ["java","-jar","hello-karate-1.0.3-SNAPSHOT.jar"]
+ENV hostIP = ""
+
+#Run mode
+#FROM openjdk:11
+#LABEL 
