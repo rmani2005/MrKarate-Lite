@@ -14,7 +14,7 @@ pipeline
 		    PATH="$M2_HOME/bin:$PATH"
 		    export PATH
       		    mvn -version
-	    	    mvn clean test
+	    	    mvn test
                 ''' 
             }
         }
@@ -22,24 +22,19 @@ pipeline
         {
             steps 
             {
-                //env.environment
-                //env.module
-                //env.exeType
-                //env.
                 sh '''
-			mvn clean test
+		mvn test
    		  '''
             }
             post 
             {
-                success 
-                {
-                 	archiveArtifacts artifacts:'target/karate-reports/karate-summary.html', fingerprint: true
-                    junit 'target/surefire-reports/**/*.xml' 
-                    junit 'target/karate-reports/karate-summary.html'
-                    echo 'Successfully!'
-                }
-                
+			success 
+			{
+			    archiveArtifacts artifacts:'target/karate-reports/karate-summary.html', fingerprint: true
+			    junit 'target/surefire-reports/**/*.xml' 
+			    junit 'target/karate-reports/karate-summary.html'
+			    echo 'Successfully!'
+			}
 		        failure {
 		        
 		            echo 'Failed!'
