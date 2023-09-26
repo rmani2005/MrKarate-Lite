@@ -98,7 +98,7 @@
 			          <goal>compile</goal>
 			       </goals>
 			       <configuration>
-			         <skipMain>true</skipMain> <--Skip
+			         <skipMain>true</skipMain>
 			       </configuration>
 			     </execution>
 			   </executions>
