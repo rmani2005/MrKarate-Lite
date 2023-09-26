@@ -37,8 +37,8 @@ pipeline
 			success 
 			{
 			    archiveArtifacts artifacts:'target/karate-reports/karate-summary.html', fingerprint: true
-			    junit 'target/surefire-reports/**/*.xml' 
-			    junit 'target/karate-reports/karate-summary.html'
+			   // junit 'target/surefire-reports/**/*.xml' 
+			   // junit 'target/karate-reports/karate-summary.html'
 			    echo 'Successfully!'
 			}
 		        failure {
